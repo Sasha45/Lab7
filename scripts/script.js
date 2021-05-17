@@ -12,7 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(entry => {
         let newPost = document.createElement('journal-entry');
         newPost.entry = entry;
+        newPost.onclick = function () {
+          setState('entry', entry);
+        };
         document.querySelector('main').appendChild(newPost);
+
       });
     });
 });
